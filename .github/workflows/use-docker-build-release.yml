@@ -71,7 +71,7 @@ jobs:
         if: ${{ inputs.push && steps.has_secret.outputs.DOCKERHUB }}
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to ghcr.io
